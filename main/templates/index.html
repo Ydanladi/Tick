@@ -147,6 +147,7 @@
                                 Contact us</a></li>
                         <li><a href="{% url 'main:about' %}"><img class="aside-icon" src="{% static 'Images/desktop/about-us.svg' %}" alt="About-us icon">
                                 About us</a></li>
+                                
                     </ul>
                 </div>
             </aside>
@@ -177,9 +178,11 @@
                         <div class="article-title">
                             <a href="{% url 'main:details' post.pk %}" class="article-heading">{{post.Title}}</a>
                             <div class="article-tags">
-                                {% if user.id == post.Author.id %} 
-                               <a href="{% url 'main:update' post.pk %}"><strong>Edit Post</strong></a>
-                               <a href="{% url 'main:Delete' post.pk %}"><strong>Delete Post</strong></a>
+                                {% if user.id == post.Author.id %}
+                                    {% if user.id  %} 
+                                <a href="{% url 'main:update' post.pk %}"><strong>Edit Post</strong></a>
+                                <a href="{% url 'main:Delete' post.pk %}"><strong>Delete Post</strong></a>
+                                    {% endif %}
                                {% endif%}
                                <p class="date">Last Update:<strong>{{post.Date_Created}}</strong></p>
                                

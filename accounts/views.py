@@ -53,7 +53,7 @@ def Register(request):
                     request, "registrations/signUp.html", {"msg": "user already exists"}
                 )
         else:
-            messages.error(request, "passwords not matched")
+            messages.error(request, "passwords not")
 
         return redirect("main:home")
 
