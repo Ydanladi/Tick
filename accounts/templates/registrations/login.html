@@ -24,17 +24,17 @@
           <div>
             <a href="{% url 'main:home' %}" class="logo_heading">Tick</a>
           </div>
-          <div class="search_box">
+          {% comment %} <div class="search_box">
             <input type="search" placeholder="Search.." />
             <button class="search-btn"></button>
-          </div>
+          </div> {% endcomment %}
         </div>
         <nav class="desktop_nav">
-          <img  class="dark" onclick="setTheme('dark')" style="width: 3%;" src="toggle.svg"
+          <img class="dark" onclick="setTheme('dark')" style="width: 5.3%;" src="{% static 'Images/toggle.svg' %}"
               alt="dark mode icon">
-          <img onclick="setTheme('light')" class="light" style="width: 3%;" src="toggle.svg"
-              alt="light mode icon">
-                  {% if user.is_authenticated %}
+          <img onclick="setTheme('light')" class="light" style="width: 5.3%;" src="{% static 'Images/toggle.svg' %}"
+               alt="light mode icon">
+              {% if user.is_authenticated %}
               <ul>
                   
                   <li>
