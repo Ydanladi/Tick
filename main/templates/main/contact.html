@@ -107,38 +107,102 @@
                 </nav>
             </div>
         </header>
-    <div class="container">
-      <h2>Contact Us</h2>
-      <h4>Tick-blog will love to hear from you!</h4><br>
-      <div class="table">
-        <div class="form-div">
-          <h4 class="mg">Send us a message</h4><br><br><br>
-          <form action="" class="">
-            <div class="main_div1">
-            <label class="bl" for="name">First name</label>
-            <input type="text" class="name">
-            <label class="bl" for="name">Last Name</label>
-            <input type="email" class="name">
-            <label class="bl" for="">Phone</label>
-            <input type="text">
-            <label class="bl" for="">Email</label>
-            <input type="email">
-          </div><br><br>
-          <input type="Textarea">
-          
+        <main>
+
+            <div class="main_container">
+                <div class=text>
+                    <h2>Contact us</h2>
+                    <strong><p>Tick Blog want to hear from you !</strong></p>
             
-          </form>
+                </div>
+                <div class="container">
+                    <div class="left_side">
+                        <h3>Send us a message</h3>
+                        <form>
+                            <div class="form_one">
+                                <div class="full">
+                                    <label for="full name">Full name</label>
+                                    <input type="text" placeholder="Type your Full name" required>
+                                </div>
 
-        </div>
-        <div class="contact-div">
-          <h4 class="mg2">Contact information</h4><br><br><br><br><b><br></b>
-          <hr><br><br><br><br>
-          <hr>
+                                <div class="full">
+                                    <label for="email">Email</label>
+                                    <input type="email" placeholder="Type your Email" required>
+                                </div>
+                            </div>
 
-        </div>
-      </div>
-    </div>
+                            <div class="form_two">
 
+                                <div class="full">
+                                    <label for="phone">Phone</label>
+                                    <input type="number" placeholder="type your number" required>
+                                </div>
+
+                                <!-- <div class="hidden">
+                                    <label for="phone">Phone</label>
+                                    <input type="number" placeholder="type your number" required>
+                                </div> -->
+
+                                <div class="message">
+                                    <label for="message">Message</label>
+                                    <input type="text" placeholder="Type your message" required>
+                                </div>
+                            </div>
+
+                            <div class="message_hidden ">
+                                <label for="message">Message</label>
+                                <input type="text" placeholder="Type your message" required>
+                            </div>
+
+
+                            <div class="buttons">
+                                <button class="buttons__continue"><a href="#">Submit</a></button>
+                            </div>
+                    
+                        
+                        </form>
+
+                        
+
+                    </div>
+
+                    <div class="right_side">
+                        <h3>Contact information</h3>
+                        <hr>
+
+                        <div class="phone">
+                            <img src="{% static 'images/contact phone.svg' %}">
+                            <p>+ 234 90 217 936</p>
+                        </div>
+    
+                        <div class="phone">
+                            <img src="{% static 'images/email.svg' %}">
+                            <p>jpblog@yahoo.com</p>
+                        </div>
+                        <hr>
+    
+                        <div class="phone">
+                            <img src="{% static 'images/contact twitter.svg' %}">
+                            <p>@jpblog_community</p>
+                        </div>
+    
+                        <div class="phone">
+                            <img src="{% static 'Images/instagram.svg' %}">
+                            <p>jpblog_community</p>
+                        </div>
+    
+                        <div class="phone">
+                            <img src="{% static 'Images/facebook.svg' %}">
+                            <p>jpblog_community</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+           
+        </main>
+
+   
     <footer class="footer">
       <p>
           Tick — A space where techies can interact with like minds and share ideas.
@@ -148,6 +212,6 @@
       </p>
       <p>Made by Team8 - Tick. JP Community &copy; 2022.</p>
   </footer>
-    <script src="./script.js"></script>
+    <script src="{% static 'javascripts/script.js' %}"></script>
   </body>
 </html>
