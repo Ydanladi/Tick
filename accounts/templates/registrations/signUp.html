@@ -32,32 +32,32 @@
             <input type="file" name="profile" required><br/><br/> {% endcomment %}
     
             <label for="display name"><b>Create password </b></label>
-            <input type="password" id="pass1" placeholder="Enter password" class="password" name="password" required>
-            {% comment %} <label for="display name"><b>Comfirm password </b></label>
-            <input type="password" id="pass2"placeholder="Enter password" class="confirmPassword" name="password2" required> 
-             {% endcomment %}
+            <input type="password" id="pass1" placeholder="Enter password" class="password" name="password" onkeyup='check();'required>
+            <label for="display name"><b>Comfirm password </b></label>
+            <input type="password" id="pass2"placeholder="Enter password" class="confirmPassword" name="password2" onkeyup='check();'required> 
+    
                <div class='.btn'>
         <button type="submit">Sign up</button>
-        
-    </div>
-           
+        </div>
     </div>
 </form>  
-{% comment %} <script> 
+<script> 
     document.querySelector('.btn').onclick = function(){
         var password=document.querySelector('.password').value,
     confirmPassword=document.querySelector('.confirmPassword').value;
     
     }
     
-    if (password!== confirmPassword){
-        prompt('password not matched');
+    if (password!= confirmPassword){
+        alert('password not matched');
     }
     else{
         pass
     }
+
+    return True;
         
-   </script>  {% endcomment %}
+   </script> 
 
 </body>
 </html>

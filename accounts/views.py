@@ -29,25 +29,31 @@ def signin(request):
 def Register(request):
     if request.method == "POST":
         input = request.POST
+        password2=input["password2"],
+        password=input["password"],
         
-        try:
-            password2=input["password2"],
-            user = User.objects.create_user(
-                username=input["username"],
-                email=input["email"],
-                password=input["password"],
-                
-                first_name=input["first_name"],
-                last_name=input["last_name"],
-            )
+        if password==password2:
             
-            user.save()
-            login(request, user)
-        except django.db.utils.IntegrityError:
-             
-            return render(
-                request, "registrations/signUp.html", {"msg": "user already exists"}
-            )
+        
+            try:
+                user = User.objects.create_user(
+                    username=input["username"],
+                    email=input["email"],
+                    password=input["password"],
+                    
+                    first_name=input["first_name"],
+                    last_name=input["last_name"],
+                )
+                
+                user.save()
+                login(request, user)
+            except django.db.utils.IntegrityError:
+                
+                return render(
+                    request, "registrations/signUp.html", {"msg": "user already exists"}
+                )
+        else:
+            messages.error(request, "passwords not matched")
 
         return redirect("main:home")
 
